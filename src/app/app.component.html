@@ -1,0 +1,81 @@
+<!-- DIRECTIVA ATRIBUTOS -->
+<h4>ngStyle</h4>
+<!--A1 ngStyle -->
+
+<!-- que podemos hacer con ngStyle...es para poder modificar estilos
+siempre a partir de variables es decir estilos dinamicos a partir de 
+una variable y cuando modifique esos estilos este parrafo se vea modificado
+Lo primero es situar el ngStyle entre corchetes ya que lo que voy a agregar
+ en las comillas va aser codigo JS 
+entre comillas voy a definir un objeto en el cual yo pueda definir sus propiedades
+por ejempo color y fontSize siguiendo la sintaxis del CamelCase-->
+<p [ngStyle]="{color:'red',fontSize:'15px'}">
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, quos quibusdam dolore omnis nihil blanditiis accusantium perspiciatis maiores similique sint alias tempore id adipisci voluptas! Numquam quisquam officiis perferendis eligendi.
+  sds
+</p>
+<!-- A2 pasando el objeto como una variable 
+LOS MISMOS estilos en ves de estar definidos en laplantilla estandefinidos enel TS-->
+<p [ngStyle]="propiedadesParrafo">
+  COMO VARIABLE quos quibusdam dolore omnis nihil blanditiis accusantium perspiciatis maiores similique sint alias tempore id adipisci voluptas! Numquam quisquam officiis perferendis eligendi.
+</p>
+<div>
+  <button (click)="cambiaColor('v')">verde</button>
+  <button (click)="cambiaColor('r')">rojo</button>
+  <button (click)="cambiaColor('a')">amarillo</button>
+  <button (click)="cambiaTamano('mas')">Tamano mas</button>
+  <button (click)="cambiaTamano('menos')">tamano menos</button>
+</div>
+<hr>
+<h5>ngStyle con ngModel</h5>
+<!--B1   el; ngModel no servia para enlazar un propiedad o el valor
+de una variable ccon el valor de un cmapo de texto ..vamos intenar enganchar
+la propiedad color con el valor de un campo de texto -->
+<!-- lo primero para utilizar el ngModel es:
+    1 ir al modulo de la aplicacion importar librreria FormsModule
+    2 debajo de eso incorporar en el imports ...esto para que 
+      todos los componentes reconozcan todas las herramientas que se
+      encuentran en el FormsModule-->
+<!-- creando input y enganchando con la propiedad que modifica el color
+    en nuestro caso de nuestro parrafo -->
+<!-- [(ngModel)] asignado con la propiedad que va estar engnchado
+en nuestro caso nuestra propiedad es llamada propiedadesParrafo y lo que 
+queremos modificar es color -->
+<div>
+  <input type="text" [(ngModel)]="propiedadesParrafo.color">
+</div>
+<hr>
+<h5>ngStyle (change)</h5>
+<!-- C1 planteandonos commo modificar el tama;o del texto a partir de
+un campo Range(una bolita que se mueve)  -->
+<!-- vamos utiliar el change con el $event porque queremos aber el valor de este campo -->
+<div>
+  <input type="range" min="12" max="100" setp="2" (change)="onChange($event)">
+</div>
+<h5>ngStyle (input)</h5>
+<!-- vamos utiliar el input con el $event porque queremos aber el valor de este campo -->
+<div>
+  <input type="range" min="12" max="100" setp="2" (input)="onInput($event)">
+</div>
+<hr>
+<h4>ngClass</h4>
+<!-- D1 ngClass.....Dsinificado: 
+  nos permitirán agregar clases dinámicamente sobre el elemento HTML seleccionado -->
+<!-- vamos a pder agregar o quitar clases css deanera dinamica
+para ELLO vamos a crear un componente   luego trabajar en su html y 
+en sus estilos -->
+<app-semaforo> </app-semaforo>
+
+<hr>
+<!-- DIRECTIVAS ESTRUCTURALES -->
+<h4>ngIf</h4>
+<!-- F1 ngIf lo que nos permite es mostrar u ocultar diferentes elementos
+ en funcion de ciertas expresiones ...si yo devuelvo true o false se muetra
+o no un elemento 
+Ejemlplo quiero que el siguiente parrado se muestre en funcion de una expresion
+la sintaxis del ngIf es *ngIf y ponerla entre comillas una expresion (true o false)
+si pongo true el contenido no se ve afectado y si pongo false el parrafo se oculta-->
+<p *ngIf="false">Contendido Parrafo</p>
+<!-- F2 a partir del componente ts crearemos la propiedad mostrar-->
+<p *ngIf="mostrar">Contendido Parrafo</p>
+<!-- F4 haciendoolo mas dinamico creando un boton-->
+<button (click)="onClickMostar()">Mostrar / Ocultar</button>

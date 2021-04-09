@@ -1,0 +1,41 @@
+<!-- D2 existen varias formas de agregar clases-->
+
+<!-- LA PRIMERA MANERA ES ASIGNANDOLE UN STRING     
+tenemos que coger ngClass entre corchetes porque lo que
+va ir en las comillas es codigo JS evaluable...y yo
+puedo las clases que vienen  traves de un string pero una
+sentencia valida de JS entonces se usa las comillas simples-->
+<!-- tRABAJAR CON STRING ES UN POCO COMPLICADO -->
+<div class="semaforo" [ngClass]="'rojos'"></div>
+
+
+<!--D3 desde el ts quitamos las comillas simples
+lo bueno es que desde el ts podriamos modificar y agregarle
+o quitarle ciertas clases -->
+<h5>desde el ts tipo string</h5>
+<div class="semaforo" [ngClass]="cadenadeClases"></div>
+<!--D4 Trabajar con array nos da la posibilidad de modificar los
+diferentes elementos que tiene ese array  -->
+<h5>desde el ts tipo array</h5>
+<div class="semaforo" [ngClass]="arrayClases"></div> 
+
+<!-- E1 ngClass a traves de objeto -->
+<!-- dentro del ngClass yo puedo colocar un objeto JS
+    en este caso se esta aplicando la clase semaforo y no se 
+esta aplicando la clase redondo -->
+<h5>ngClass a traves de objeto</h5>
+<div class="semaforo" [ngClass]="{semaforo:true,redondo:false,amarillo:false}"></div> 
+<!-- E2 esto puede tener mas potencia si juntamos con mas expresiones
+por ejemplo puedo poner otros colores y que dependan de ciertas expresiones
+ejemplo de como hacer que el semaforo vaya cambiando de colores ...vamos al css
+incluimos la clase  de colores {{NO OLVIDEMOS QUE EL
+CSS REVELA EN ORDEN }}...AHORA si queremos que estas clases vayan cambiando
+VAMOS hacer que el true o false se consigan a traves de expresiones....vamos
+entonces al ts  del semaforo y creamos colorSeleccionado:string;-->
+<!-- para ir cambiando dinamicamente en ngOnInit() -->
+<h6>ngClass a travez de objeto con mas potencia </h6>
+<div class="semaforo" [ngClass]="{semaforo:true,redondo:true,borde:true,
+    rojos:(colorSeleccionado==='r'),
+    amarillo:(colorSeleccionado==='a'),
+    verde:(colorSeleccionado==='v')}">
+</div> 
