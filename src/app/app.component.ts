@@ -24,7 +24,7 @@ export class AppComponent {
     this.sise=this.propiedadesParrafo.fontSize.match(regex);
 
     //F3 
-    this.mostrar=false;
+    this.mostrar=true;
  }
  //A4
  cambiaColor(pColor:string){
@@ -70,6 +70,15 @@ export class AppComponent {
   }
   //F5 vamos a alternar los true false con la negacion
   onClickMostar(){
+    this.mostrar= !this.mostrar;
+  }
+  onClickMostar2(){
+    this.mostrar= !this.mostrar;
+  }
+  onClickMostar3(){
+    this.mostrar= !this.mostrar;
+  }
+  onClickMostar4(){
     this.mostrar= !this.mostrar;
   }
 }

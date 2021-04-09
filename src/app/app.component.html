@@ -79,3 +79,51 @@ si pongo true el contenido no se ve afectado y si pongo false el parrafo se ocul
 <p *ngIf="mostrar">Contendido Parrafo</p>
 <!-- F4 haciendoolo mas dinamico creando un boton-->
 <button (click)="onClickMostar()">Mostrar / Ocultar</button>
+
+
+<!-- --------------------------------------------------- -->
+<!-- G1 ngIf else -->
+<h4>ngIf else</h4>
+<!-- quiero que este parrafo se muestra cuando la variable mostrar sea false 
+es decir si la variable  mostrar es true se muestra el primer parrafo
+pero si es flaso que se muestre el segundo parrafo
+Tenemos que incoporar dentro de una etiqueta que no aporte ningun contenido
+a la pagina web que estamos trabajando en este caso ANGULAR nos ofrece la 
+etiqueta ng-template que no hace nada sino que envuelve el elemento para
+poder trabajar con el -->
+<!-- despues del *ngIf que me va devolver una sentencia yo puedo poner la 
+expresion del else  y luego el nombre del Bloque que quero activar 
+ej elseBlock  ....ahora para definir este bloque (elseBlock) vamos a usar variables
+de plantilla con el la amohadilla #elseBlock-->
+<p *ngIf="mostrar; else elseBlock">Contendido Parrafo 1</p>
+
+<ng-template #elseBlock >
+  <p>Contendido Parrafo 2</p>
+</ng-template>
+<button (click)="onClickMostar2()">Mostrar / Ocultar</button>
+
+<!-- ngIf then else -->
+<h4>ngIf then else</h4>
+<p *ngIf="mostrar; then mainBlock else elseBlock">Contendido Parrafo</p>
+<ng-template #mainBlock>
+  <p>Contendido del PRIMER Parrafo</p>
+</ng-template>
+<ng-template #elseBlock >
+  <p>Contendido del SEGUNDO Parrafo</p>
+</ng-template>
+<button (click)="onClickMostar3()">Mostrar / Ocultar</button>
+
+<!-- Otra mejor forma de THEN ELSE -->
+<h4>ngIf then else rapida</h4>
+
+<p *ngIf="mostrar">Contendido 1er Parrafo</p>
+<p *ngIf="!mostrar">Contendido 2do Parrafo</p>
+
+<button (click)="onClickMostar4()">Mostrar / Ocultar</button>
+
+<hr>
+<h4>ngFor</h4>
+<!-- G1 Directiva estructural ngFor 
+repetir los bloques tantas veces necesitemos
+VAMOS A CREAR UN nuevo componente -->
+<app-bucles></app-bucles>

@@ -1,0 +1,53 @@
+<!--G3 TENEMOS un unico elemento  ahora solo hay que repetirlo -->
+<!-- el ngFor se usa como  *ngFor y dentro de este es como si estuvieramos
+haciendo como un for of en JS o en TS.....creamos una variable en este caso (persona)
+que es la que va a represemtar a cada uno de los elementos y nombre de 
+la coleccion (personas)-->
+<ul>
+     <li *ngFor="let dpersona of personas">
+         {{dpersona.nombre}} {{dpersona.apellidos}}-{{dpersona.edad}}
+
+     </li>
+ </ul>  
+
+
+ 
+ <!-- G4 ngFor mejorando el diseno -->
+ <!-- creano un contendor personas2 porsi tengo que agregarle estilos
+y luego agregar el elemento correspondiente para una unica persona
+este va a tener dentro de un h3 nombre y apellidos  
+y le daremos estilos en el Css-->
+<!-- en el bloque que se va a repetir ponemos el *ngFor -->
+ <h5>ngFor mejorando el el diseno</h5>
+ 
+ <button (click)="onClick()">Agregar nueva persona</button>
+ 
+ <div class="personass">
+     <div class="persona" *ngFor="let pers of personas2">
+         <h3>{{pers.nombre}} {{pers.apellidos}}</h3>
+         <p>{{pers.edad}}</p>
+         <p>{{pers.telefono}}</p>
+     </div>
+ </div>
+
+ <!-- G5 podemos verlo en una tabla -->
+ <!-- en el tr es donde se va a repetir el ngFor -->
+ <table>
+     <thead>
+         <tr>
+             <th>Nombre</th>
+             <th>Apellidos</th>
+             <th>edad</th>
+             <th>telefono</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let pers of personas2">
+            <td>{{pers.nombre}}</td>
+            <td>{{pers.apellidos}}</td>
+            <td>{{pers.edad}}</td>
+            <td>{{pers.telefono}}</td>
+         </tr>
+     </tbody>
+ </table>
+
