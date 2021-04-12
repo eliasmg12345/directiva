@@ -1,0 +1,33 @@
+<!-- H2 contenido en fncion de una seleccion utilizada
+ej primero necesito una variable que me permita selccionar una de estas opciones
+que luego pueden irse modificando con la pulsacion de unnuevo boton con un
+desplegable  ...la variable tendra que estar definida-->
+<!-- NGsWITCH ES La union de dos directivas [Diretiva de atributo] en este caso ngSwitch
+como Directiva ngStyle o ngClass va entre corchetes  y como valor tengo que poner la variable
+que quierp evaluar en este caso opcionNumero la variable que quiero evaluar  
+
+Ahora estos elementos va a aparecer o desapareccer en funcion de la directiva estructural
+qu es *ngSwitchCase muy parecido a lo que vemos en JS
+Evaluamos la variable con el [ngSwitch] sacamos el valor  y para cada uno de los
+valores mostramos u ocultamos <p *ngSwitchCase=""> que es un bloque de codigo
+    pondremos entre comillas los valores que va activar estos bloques -->
+
+    <h5>OPCION NUMERO</h5>
+<div [ngSwitch]="opcionNumero ">
+    <p *ngSwitchCase="1">Opicion 1</p>
+    <p *ngSwitchCase="2">Opicion 2</p>
+    <p *ngSwitchCase="3">Opicion 3</p>
+    <p *ngSwitchCase="4">Opicion 4</p>
+    <p *ngSwitchDefault>Ninguna de las anteriores</p>
+</div>
+<!-- el ngSwichCase al igual que el resto de directivas lo que recibe
+dentro es una evaluacion JS entonces uno tiene que estar entre comillas simples
+para que lo pueda evaluar -->
+<h5>OPCION STRING</h5>
+<div [ngSwitch]="opcionString  ">
+    <p *ngSwitchCase="'uno'">Opicion 1</p>
+    <p *ngSwitchCase="'dos'">Opicion 2</p>
+    <p *ngSwitchCase="'tres'">Opicion 3</p>
+    <p *ngSwitchCase="'cuatro'">Opicion 4</p>
+    <p *ngSwitchDefault>Ninguna de las anteriores</p>
+</div>
