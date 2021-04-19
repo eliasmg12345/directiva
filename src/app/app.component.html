@@ -134,3 +134,38 @@ VAMOS A CREAR UN nuevo componente -->
 una directiva de atributo y una de estructural o cual veremos ahora -->
 <!-- creando un nuevo componente Switch-->
 <app-switch></app-switch>
+
+<h3>DIRECTIVAS PERSONALIZADAS</h3> 
+<h4>y Direcivas Perzonalizadas RENDERER</h4>
+
+<!-- I4  aplicando la directiva propia mia-->
+<p subrayado>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, reprehenderit.</p>
+<p subrayado>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, corrupti.</p>
+
+<!-- J1 para evadirnos de las herramientas del navegador y poder cambiar estos estilos
+  independientemente de la plataforma que estamos trabajando tenemos una herramienta
+en este caso que es el renderer J2 en el ts de subrayado -->
+
+<h4>Direct Perz @HOSTLISTENER</h4>
+<!-- K1 este decorador nos permite capturar eventos que hayan sucedido sobre
+aquellor elementos queayamos aplicado la directiva....es decir yo me quiero enterar
+que eventos estan pasando sobre las cosas del html de las cuales he aplicado
+la directivas.....como se utiliza? en subrayado.diretive.ts K2  -->
+<p subrayado>Usando HostListener  ////////Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum rem, blanditiis atque sapiente nihil eligendi?</p>
+
+<h4>Direct Perz @HostBinding</h4>
+<!-- L1 podemos modificar los atributos internamente para ello en el ts
+tenemos disponible otro decorador L2 despues ya sera cosa del css L5-->
+<p subrayado>Usando @HostBinding ////////////Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsam distinctio illum aut incidunt maxime quasi quidem sequi est corrupti?</p>
+
+<h4>Direct Perz @Input</h4>
+<!-- M1 de la misma manera que utilizabamos en los componentes vamos utilizar 
+en las directivas simplemente pasando informacion desde el elemento padre
+es decir desde donde estemos definiendo o ejecutando esta directiva ..
+nos vamos al ts importando el input M2-->
+<!--  M5  definiendo una propiedad que sea config y pasarle el valor del objeto
+..ahora si quiero pasarle el objeto la propiedad tiene que ir entre corchetes por que 
+recibe sentencia JS-->
+<p [subrayado]="{colorHover:'blue',colorNoHover:'blueviolet'}">Usando @Input /////////// Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorum mollitia porro laborum molestias, quae officia? Voluptatibus ab debitis ad.</p>
+<p [subrayado]="{colorHover:'pink',colorNoHover:'orange'}">Usando @Input /////////// Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorum mollitia porro laborum molestias, quae officia? Voluptatibus ab debitis ad.</p>
+
